@@ -22,8 +22,16 @@ app.use(express.static(`${__dirname}/public`));
 
 //index route
 app.get('/', (req, res) => {
+  res.render('home');
+});
+
+
+
+app.get('/ebook', (req, res) => {
   res.render('index', {spk: keys.stripePublishableKey});
 });
+
+
 
 app.post('/charge', (req, res) => {
   var amount = 2500;
